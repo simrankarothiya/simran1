@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project spotify</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<style>
+    body {
+        background-color: rgb(168, 246, 246);
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav {}
+
+    nav ul {
+        list-style-type: none;
+        background-color: black;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        color: aliceblue;
+    }
+
+    nav ul li {
+        padding: 0 12px;
+
+    }
+
+    .brand img {
+        width: 52px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .container {
+        min-height: 60vh;
+        background-color: black;
+        color: white;
+        border-radius: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 23px auto;
+        display: flex;
+        width: 70%;
+        padding: 34px;
+        /* background-image: url("https://images.template.net/wp-content/uploads/2014/11/creative-music-platforms-backgrounds1.jpg"); */
+        background-image: url("https://i.pinimg.com/736x/30/4c/70/304c704a314394fc8705fb0191fafb5f.jpg");
+        background-size: cover;
+    }
+
+    .bottom {
+        background-color: black;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 80px;
+        color: white;
+        position: sticky;
+
+
+    }
+
+    #myProgressBar {
+        width: 80vw;
+        cursor:pointer;
+    }
+    .icons {
+        margin-top: 5px;
+    }
+
+    .icons i {
+        cursor: pointer;
+        margin: 0 12px;
+        padding: 0 0px;
+}
+    
+
+    .songItemcontainer {
+        margin-top: 74px;
+    }
+
+    .songItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        background-color: white;
+        color: black;
+        width: 80%;
+        margin: 12px 0;
+        padding: 0px 5px;
+        border-radius: 34px;
+    }
+
+    .songItem img {
+
+        width: 43px;
+        margin: 0 23 px;
+        border-radius: 34 px;
+        border-radius: 50%;
+    }
+
+    .timestamp {
+        margin: 0 23px;
+        padding: 0 12px;
+    }
+.songInfo {
+    position: absolute;
+    left:10vw;
+    font-family: Varela, Geneva, Tahoma, sans-serif;
+}
+
+/* .songInfo img{
+    opacity: 0;
+    transition:opacity 1s ease-in;
+} */
+
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li class="brand"> <img src="https://i.pinimg.com/736x/e1/92/4e/e1924e2d71900848f3a411a83b027415.jpg"
+                    alt="Spotify">spotify</li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="songList">
+            <h2> Best of NCS - No Copyright Sounds</h2>
+            <div>
+                <div class="songItem">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                        alt="1" margin="0 23px">
+                    <span>Beat Zone</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color: red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                           
+                </div>
+                <div class="songItem">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                        alt="1">
+                    <span>Beat Zone</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:rgb(227, 50, 80); padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                        alt="1">
+                    <span>Beat Zone</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                        alt="1">
+                    <span>Sound Wave</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:rgb(227, 50, 80); padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                </div>
+                <div class="songItem">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                        alt="1">
+                    <span>  Let me love you</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="SongBanner"></div>
+    </div>
+
+
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" max="100">
+        <div class="icons">
+            <i class="fas fa-3x fa-fast-backward"></i>
+            <i class="far fa-3x fa-play-circle" id="masterplay"></i>
+            <i class="fas fa-3x fa-fast-forward"></i>
+        </div>
+        <div class="songInfo">
+            <img src="https://i.gifer.com/5uwq.gif" width="50px" alt="">"Feel the Beat, Live the Rhythm"
+        https://github.com/simrankarothiya/simran1
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
