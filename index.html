@@ -26,7 +26,7 @@
         background-color: black;
         height: 60px;
         display: flex;
-        align-items: center;
+align-items: center;
         color: aliceblue;
     }
 
@@ -52,7 +52,7 @@
         color: white;
         border-radius: 12px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        margin: 23px auto;
+margin: 23px auto;
         display: flex;
         width: 70%;
         padding: 34px;
@@ -78,7 +78,7 @@
     #myProgressBar {
         width: 80vw;
         cursor:pointer;
-    }
+}
     .icons {
         margin-top: 5px;
     }
@@ -107,7 +107,7 @@
         border-radius: 34px;
     }
 
-    .songItem img {
+.songItem img {
 
         width: 43px;
         margin: 0 23 px;
@@ -135,7 +135,7 @@
 <body>
     <nav>
         <ul>
-            <li class="brand"> <img src="https://i.pinimg.com/736x/e1/92/4e/e1924e2d71900848f3a411a83b027415.jpg"
+<li class="brand"> <img src="https://i.pinimg.com/736x/e1/92/4e/e1924e2d71900848f3a411a83b027415.jpg"
                     alt="Spotify">spotify</li>
             <li>Home</li>
             <li>About</li>
@@ -144,40 +144,41 @@
     <div class="container">
         <div class="songList">
             <h2> Best of NCS - No Copyright Sounds</h2>
-            <div>
+            <div id="songs">
+                
                 <div class="songItem">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
-                        alt="1" margin="0 23px">
-                    <span>Beat Zone</span>
-                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color: red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
-                            class="far fa-play-circle"></i></span></span>
-                           
-                </div>
-                <div class="songItem">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
-                        alt="1">
-                    <span>Beat Zone</span>
+                    <img src= "images/1.jpg"  alt="1"   >
+                    
+                    <span class="songName">Beat Zone</span>
                     <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:rgb(227, 50, 80); padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
                             class="far fa-play-circle"></i></span></span>
                 </div>
                 <div class="songItem">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
+                    <img src= "images/2.jpg"
                         alt="1">
-                    <span>Beat Zone</span>
+                    <span class="songName">Beat Zone</span>
                     <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
                             class="far fa-play-circle"></i></span></span>
                 </div>
                 <div class="songItem">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
-                        alt="1">
-                    <span>Sound Wave</span>
+                    <img src="images/3.jpg" 
+                        alt="1" >
+                    <span class="songName">Sound Wave</span>
                     <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:rgb(227, 50, 80); padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
                             class="far fa-play-circle"></i></span></span>
                 </div>
                 <div class="songItem">
+                    <img src="images/4.jpg"
+                        alt="1">
+                    <span  class="songName">  Let me love you</span>
+                    <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
+                            class="far fa-play-circle"></i></span></span>
+                </div>
+
+                <div class="songItem">
                     <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe529a64193929.5aca8500ba9ab.jpg"
                         alt="1">
-                    <span>  Let me love you</span>
+                    <span class="songName">  Let me love you</span>
                     <span class="songlistplay"><span class="timestamp"><i class="fas fa-heart" style="color:red; padding: 0 12px; margin: 0 12px;"></i>05:34</span><i
                             class="far fa-play-circle"></i></span></span>
                 </div>
@@ -186,17 +187,19 @@
         <div class="SongBanner"></div>
     </div>
 
-
-    <div class="bottom">
+<div class="bottom">
         <input type="range" name="range" id="myProgressBar" min="0" max="100">
         <div class="icons">
-            <i class="fas fa-3x fa-fast-backward"></i>
+            <i class="fas fa-3x fa-fast-backward" id="previous"></i>
             <i class="far fa-3x fa-play-circle" id="masterplay"></i>
-            <i class="fas fa-3x fa-fast-forward"></i>
+            <i class="fas fa-3x fa-fast-forward" id="next"></i>
+           
+            <audio id="audioElement"></audio>
         </div>
         <div class="songInfo">
             <img src="https://i.gifer.com/5uwq.gif" width="50px" alt="">"Feel the Beat, Live the Rhythm"
         
+            </div>
     </div>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
@@ -204,4 +207,67 @@
 
 </body>
 
+<script>
+    console.log("welcome to spotify");
+
+let songIndex = 0;
+
+let songs = [
+    { songName: "Barkhare", filePath: "songs/1.mp3", coverPath: "images/1.jpg" },
+    { songName: "Dekho-Dekho", filePath: "songs/2.mp3", coverPath: "images/2.jpg" },
+    { songName: "Nashe se", filePath: "songs/3.mp3", coverPath: "images/3.jpg" },
+    { songName: "Balka", filePath: "songs/4.mp3", coverPath: "images/4.jpg" },
+    { songName: "Rab-Barkahre", filePath: "songs/1.mp3", coverPath: "images/2.jpg" }
+];
+
+let audioElement = new Audio(songs[songIndex].filePath);
+let masterplay = document.getElementById("masterplay");
+let myProgressBar = document.getElementById("myProgressBar");
+let songItem = Array.from(document.getElementsByClassName("songItem"));
+
+songItem.forEach((element, i) => {
+    console.log(element, i);
+    element.getElementsByTagName('img')[0].src = songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+});
+
+masterplay.addEventListener('click', () => {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        audioElement.play();
+        masterplay.classList.remove("fa-play-circle");
+        masterplay.classList.add("fa-pause-circle");
+    } else {
+        audioElement.pause();
+        masterplay.classList.remove("fa-pause-circle");
+        masterplay.classList.add("fa-play-circle");
+    }
+});
+
+audioElement.addEventListener('timeupdate', () => {
+    let progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+    myProgressBar.value = progress;
+});
+
+myProgressBar.addEventListener('input', () => {
+    audioElement.currentTime = (myProgressBar.value * audioElement.duration) / 100;
+});
+
+next.addEventListener("click", () => {
+    songIndex = (songIndex + 1) % songs.length; 
+    audioElement.src = songs[songIndex].filePath;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove("fa-play-circle");
+    masterplay.classList.add("fa-pause-circle");
+});
+
+previous.addEventListener("click", () => {
+    songIndex = (songIndex - 1 + songs.length) % songs.length;
+    audioElement.src = songs[songIndex].filePath;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove("fa-play-circle");
+    masterplay.classList.add("fa-pause-circle");
+});
+</script>
 </html>
